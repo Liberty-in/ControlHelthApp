@@ -30,7 +30,7 @@ public class ReactionAdapter extends RecyclerView.Adapter<ReactionAdapter.Reacti
 
     @Override
     public void onBindViewHolder(@NonNull ReactionAdapter.ReactionViewHolder holder, int position) {
-        Reaction item = data.get(position);
+        Reaction item = data.get(data.size() - position - 1);
        int number = item.getCount();
        switch (number){
            case 1:{

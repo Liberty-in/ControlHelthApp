@@ -4,16 +4,16 @@
     <item
         android:id="@+id/navigation_home"
         android:icon = "@drawable/ic_baseline_home_24"
-        android:title="@string/home" />
+        android:title="Home" />
 
     <item
         android:id="@+id/navigation_history"
         android:icon="@drawable/ic_baseline_history_24"
-        android:title="@string/title_history" />
+        android:title="History" />
 
     <item
         android:id="@+id/navigation_chat"
-        android:icon="@drawable/ic_baseline_volunteer_activism_24"
-        android:title="@string/title_chat" />
+        android:icon="@drawable/baseline_self_improvement_24"
+        android:title="Improvement" />
 
 </menu>

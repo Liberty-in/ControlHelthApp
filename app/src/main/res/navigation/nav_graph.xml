@@ -10,25 +10,45 @@
         android:name="com.prequelapp.lib.controlhelthapp.HomeFragment"
         android:label="@string/home"
         tools:layout="@layout/fragment_home" >
-        <argument
-            android:name="count"/>
-        <action
-            android:id="@+id/action_navigation_home_to_choiceFragment"
-            app:destination="@id/choiceFragment" />
+
+
         <action
             android:id="@+id/action_navigation_home_to_startFragment2"
             app:destination="@id/startFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_addWaterFragment"
+            app:destination="@id/addWaterFragment" />
+        <action
+            android:id="@+id/action_navigation_home_to_nav_addFoodFragment"
+            app:destination="@id/nav_addFoodFragment" />
     </fragment>
     <fragment
         android:id="@+id/navigation_history"
         android:name="com.prequelapp.lib.controlhelthapp.HistoryFragment"
         android:label="@string/title_history"
-        tools:layout="@layout/fragment_history" />
+        tools:layout="@layout/fragment_history" >
+        <action
+            android:id="@+id/action_navigation_history_to_diabetesFragment"
+            app:destination="@id/diabetesFragment" />
+    </fragment>
     <fragment
         android:id="@+id/navigation_chat"
         android:name="com.prequelapp.lib.controlhelthapp.ChatFragment"
         android:label="@string/title_chat"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/fragment_chat" >
+        <action
+            android:id="@+id/action_navigation_chat_to_smileFragment"
+            app:destination="@id/smileFragment" />
+        <action
+            android:id="@+id/action_navigation_chat_to_motivationFragment"
+            app:destination="@id/motivationFragment" />
+        <action
+            android:id="@+id/action_navigation_chat_to_factsFragment"
+            app:destination="@id/factsFragment" />
+        <action
+            android:id="@+id/action_navigation_chat_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/nav_addFoodFragment"
         android:name="com.prequelapp.lib.controlhelthapp.AddFoodFragment"
@@ -39,15 +59,6 @@
             app:destination="@id/navigation_home" />
     </fragment>
     <fragment
-        android:id="@+id/choiceFragment"
-        android:name="com.prequelapp.lib.controlhelthapp.ChoiceFragment"
-        android:label="fragment_choice"
-        tools:layout="@layout/fragment_choice" >
-        <action
-            android:id="@+id/action_choiceFragment_to_nav_addFoodFragment"
-            app:destination="@id/nav_addFoodFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/startFragment"
         android:name="com.prequelapp.lib.controlhelthapp.StartFragment"
         android:label="fragment_start"
@@ -55,5 +66,55 @@
         <action
             android:id="@+id/action_startFragment_to_navigation_home2"
             app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/addWaterFragment"
+        android:name="com.prequelapp.lib.controlhelthapp.AddWaterFragment"
+        android:label="fragment_add_water"
+        tools:layout="@layout/fragment_add_water" >
+        <action
+            android:id="@+id/action_addWaterFragment_to_navigation_home"
+            app:destination="@id/navigation_home" />
+    </fragment>
+    <fragment
+        android:id="@+id/smileFragment"
+        android:name="com.prequelapp.lib.controlhelthapp.SmileFragment"
+        android:label="fragment_smile"
+        tools:layout="@layout/fragment_smile" />
+    <fragment
+        android:id="@+id/motivationFragment"
+        android:name="com.prequelapp.lib.controlhelthapp.MotivationFragment"
+        android:label="fragment_motivation"
+        tools:layout="@layout/fragment_motivation" />
+    <fragment
+        android:id="@+id/addMeasureFragment"
+        android:name="com.prequelapp.lib.controlhelthapp.AddMeasureFragment"
+        android:label="fragment_add_measure"
+        tools:layout="@layout/fragment_add_measure" >
+        <action
+            android:id="@+id/action_addMeasureFragment_to_diabetesFragment"
+            app:destination="@id/diabetesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/diabetesFragment"
+        android:name="com.prequelapp.lib.controlhelthapp.DiabetesFragment"
+        android:label="fragment_diabetes"
+        tools:layout="@layout/fragment_diabetes" >
+        <action
+            android:id="@+id/action_diabetesFragment_to_addMeasureFragment"
+            app:destination="@id/addMeasureFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/factsFragment"
+        android:name="com.prequelapp.lib.controlhelthapp.FactsFragment"
+        android:label="FactsFragment" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.prequelapp.lib.controlhelthapp.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFragment_to_navigation_chat"
+            app:destination="@id/navigation_chat" />
     </fragment>
 </navigation>

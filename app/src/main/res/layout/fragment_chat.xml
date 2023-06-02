@@ -5,97 +5,158 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ChatFragment"
+    android:background="@drawable/fone"
     >
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/nast"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginBottom="180dp"
-        android:background="#B951EF57"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginTop="16dp"/>
-    <Button
-        android:id="@+id/advices"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/ugli_gplusv"
+        android:layout_marginTop="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/facts"
-        android:layout_marginBottom="56dp"
         android:layout_marginStart="8dp"
-        android:text="Полезный\nсовет"/>
-    <Button
-        android:id="@+id/facts"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/advices"
-        app:layout_constraintEnd_toStartOf="@id/support"
-        android:layout_marginBottom="56dp"
-        android:layout_marginStart="8dp"
-        android:text="интересный\nфакт"
-        />
-    <Button
-        android:id="@+id/support"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@id/facts"
-        app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="56dp"
-        android:layout_marginStart="8dp"
-        android:text="Небольшая\nмотивация"/>
-    <TextView
-        android:id="@+id/textSend"
+        app:layout_constraintTop_toTopOf="parent">
+        <TextView
+            android:id="@+id/text1"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Настроение"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            app:layout_constraintStart_toEndOf="@id/smileIm"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Как ты себя чувствуешь?"
+            app:layout_constraintStart_toEndOf="@id/smileIm"
+            app:layout_constraintTop_toBottomOf="@id/text1"/>
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/smileIm"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/add_reaction_fill0_wght400_grad0_opsz48"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:background="@drawable/ugli_gplusv"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/facts"
-        android:text="Введите сообщение..."
-        android:textSize="28sp"
-        android:textColor="@android:color/darker_gray"
-        android:layout_marginBottom="16dp"
-        android:layout_marginStart="8dp"/>
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/buttonSend"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toTopOf="@id/support"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/ic_baseline_send_24"
-        />
-    <TextView
-        android:id="@+id/userChat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:background="#4600AC07"
-        android:textColor="@color/white"
-        android:textSize="28dp"
-        android:visibility="invisible"
-        tools:visibility="visible"
-        tools:text="ghsfsghhhhhhsthfsh"/>
-    <TextView
-        android:id="@+id/botChat"
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/motiv"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/userChat"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:background="#4600AC07"
-        android:textColor="@color/white"
-        android:textSize="28dp"
-        android:visibility="invisible"
-        tools:visibility="visible"
-        tools:text="ghsfsghhhhhhsthfsh"/>
+        app:layout_constraintTop_toBottomOf="@id/nast">
+        <TextView
+            android:id="@+id/text2"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Мотивация"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            app:layout_constraintStart_toEndOf="@id/motIm"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Не сдавайся"
+            app:layout_constraintStart_toEndOf="@id/motIm"
+            app:layout_constraintTop_toBottomOf="@id/text2"/>
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/motIm"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/altitude_fill0_wght400_grad0_opsz48"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/fact"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ugli_gplusv"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/motiv">
+        <TextView
+            android:id="@+id/text3"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Факты"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            app:layout_constraintStart_toEndOf="@id/factIm"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Хочешь узнать что-то новое?"
+            app:layout_constraintStart_toEndOf="@id/factIm"
+            app:layout_constraintTop_toBottomOf="@id/text3"/>
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/factIm"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/tips_and_updates_fill0_wght400_grad0_opsz48"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/settinds"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ugli_gplusv"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/fact">
+        <TextView
+            android:id="@+id/text4"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Настройки"
+            android:textStyle="bold"
+            android:textSize="24dp"
+            app:layout_constraintStart_toEndOf="@id/settIm"
+            />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Хочешь изменить параметры?"
+            app:layout_constraintStart_toEndOf="@id/settIm"
+            app:layout_constraintTop_toBottomOf="@id/text4"/>
+        <ImageView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/settIm"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/baseline_settings_24"
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -7,48 +7,109 @@
     tools:context=".StartFragment">
     <Button
         android:id="@+id/button"
+        style="@style/Widget.Material3.Button.TonalButton"
         android:layout_width="wrap_content"
+        android:backgroundTint="#A0E697"
+        android:text="завершить"
+        android:textSize="20sp"
+        android:textColor="#ffffff"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginBottom="48dp"/>
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/text_inp"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         app:layout_constraintStart_toStartOf="parent"
-        android:hint="Введите имя"/>
-    <EditText
-        android:id="@+id/age"
+        android:hint="Имя"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/text_age"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_inp"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Возраст"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/age"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="80dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/text_height"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/text_age"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:hint="Рост"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="80dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/text_weight"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toEndOf="@id/text_height"
+        android:layout_marginTop="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintTop_toBottomOf="@id/text_age"
+        android:hint="Вес"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/weight"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <TextView
+        android:id="@+id/correct"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textSize="10dp"
+        android:visibility="invisible"
+        android:textColor="#ED0D14"
+        android:text="Введены некорректные данные"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/name"
-        android:layout_marginTop="16dp"
-        android:hint="Введите возраст"/>
-    <EditText
-        android:id="@+id/height"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/age"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        android:hint="Введите рост"/>
-    <EditText
-        android:id="@+id/weight"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        app:layout_constraintTop_toBottomOf="@id/height"
-        app:layout_constraintStart_toStartOf="parent"
-        android:hint="Введите вес"/>
+        app:layout_constraintTop_toBottomOf="@id/text_weight"/>
     <RadioGroup
         android:id="@+id/choice_sex"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/weight"
-        app:layout_constraintStart_toStartOf="parent">
+        android:layout_marginStart="16dp"
+        app:layout_constraintTop_toBottomOf="@id/correct"
+        app:layout_constraintStart_toStartOf="parent"
+        >
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -59,22 +120,21 @@
             android:text="мужчина"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/choice_sex"
+
             />
         <RadioButton
             android:id="@+id/female"
             android:text="женщина"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/choice_sex"
+            app:layout_constraintStart_toEndOf="@id/male"
             />
     </RadioGroup>
     <RadioGroup
         android:id="@+id/choice_activity"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         app:layout_constraintTop_toBottomOf="@id/choice_sex"
         app:layout_constraintStart_toStartOf="parent">
         <TextView

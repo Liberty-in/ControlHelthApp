@@ -4,23 +4,25 @@ import androidx.annotation.NonNull;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
-@Entity(tableName = "food_table")
+@Entity(tableName = "food")
 public class Food {
-    @PrimaryKey(autoGenerate = true)
-    int id;
+    private double countFat;
+    private double countCarbohydrates;
+    @NonNull
+    @PrimaryKey
     private String foodName;
-    private float countProteins;
-    private float countFat;
-    private float countCarbohydrates;
+
+
     private int countCalories;
+    private double countProteins;
 
 
-    public Food(String foodName, float countProteins, float countFat, float countCarbohydrates, int countCalories) {
-        this.foodName = foodName;
-        this.countProteins = countProteins;
+    public Food(double countFat, double countCarbohydrates, @NonNull String foodName, int countCalories, double countProteins) {
         this.countFat = countFat;
         this.countCarbohydrates = countCarbohydrates;
+        this.foodName = foodName;
         this.countCalories = countCalories;
+        this.countProteins = countProteins;
     }
 
     public String getFoodName() {
@@ -31,22 +33,21 @@ public class Food {
         return countCalories;
     }
 
-    public float getCountCarbohydrates() {
+    public double getCountCarbohydrates() {
         return countCarbohydrates;
     }
 
-    public float getCountFat() {
+    public double getCountFat() {
         return countFat;
     }
 
-    public float getCountProteins() {
+    public double getCountProteins() {
         return countProteins;
     }
 
     @Override
     public String toString() {
         return "Food{" +
-                "id=" + id +
                 ", foodName='" + foodName + '\'' +
                 ", countCalories=" + countCalories +
                 ", countCarbohydrates=" + countCarbohydrates +
